@@ -1,3 +1,5 @@
+import sys
+
 def calculate(num1, num2, operation):
     if operation == "add":
         return num1 + num2
@@ -9,18 +11,18 @@ def calculate(num1, num2, operation):
         if num2 != 0:
             return num1 / num2
         else:
-            raise ValueError("Cannot divide by zero")
+            return "Cannot divide by zero"
 
-    if __name__ == "__main__":
-       if len(sys.argv) != 4:
-           print("Usage: calculator.py <num1> <num2> <operation>")
-           sys.exit(1)
+if __name__ == "__main__":
+    if len(sys.argv) != 4:
+        print("Usage: calculator.py <num1> <num2> <operation>")
+        sys.exit(1)
 
-       num1 = float(sys.argv[1])
-       num2 = float(sys.argv[2])
-       operation = sys.argv[3]
+    num1 = float(sys.argv[1])
+    num2 = float(sys.argv[2])
+    operation = sys.argv[3]
 
-       result = calculate(num1, num2, operation)
-       print(f"Result: {result}")
+    result = calculate(num1, num2, operation)
+    print(f"Result: {result}\n")
 
-       
+print(calculate(10,2,"multiply"))
